@@ -15,6 +15,10 @@
 	<description>Motagi Online Grapes</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<sonar.projectKey>Dundappa253_grapes-market-rest-api</sonar.projectKey>
+	    <sonar.projectKey>Dundappa253_grapes-market-rest-api</sonar.projectKey>
+  		<sonar.organization>dundappa253</sonar.organization>
+  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
 		<dependency>
