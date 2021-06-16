@@ -45,8 +45,10 @@ public class ProductController {
     @PutMapping(path = "products/{prouctId}")
     public Product updateProuct(@PathParam("prouctId") Integer productId,
                                 @RequestBody Product product){
-    	logger.debug("prouctId -- "+productId);
-    	if(productId == 1) {
+    	
+    	String query = request.getQueryString();
+    	logger.debug("prouctId -- "+query);
+    	if(query.endsWith("s")) {
     		logger.debug("successfull") ;
     	}
     	
