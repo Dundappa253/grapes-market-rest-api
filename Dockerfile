@@ -4,4 +4,5 @@ MAINTAINER dundappa253
 
 COPY target/grapesmarket-0.0.1-SNAPSHOT.jar grapesmarket-0.0.1-SNAPSHOT.jar
 
+
 ENTRYPOINT ["java","-jar","/grapesmarket-0.0.1-SNAPSHOT.jar"]
