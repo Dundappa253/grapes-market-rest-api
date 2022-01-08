@@ -1,10 +1,17 @@
 pipeline {
     agent any
+    tools
+        {
+            maven 'M3'
+    }
 
     stages {
         stage('Build') {
-            steps {
-                echo 'Building..'
+            steps
+             {
+              git branch: 'master', url: 'https://github.com/Dundappa253/grapes-market-rest-api.git'
+              
+              sh "mvn install -DskipTests=true"
             }
         }
         stage('Test') {
