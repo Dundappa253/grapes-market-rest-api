@@ -1,24 +1,30 @@
-pipeline {
-    agent any
-    
 
+library identifier: "pipeline-library@v1.5",
+retriever: modernSCM(
+  [
+    $class: "GitSCMSource",
+    remote: "https://github.com/Dundappa253/grapes-market-rest-api.git"
+  ]
+)
+
+appName = "my-java-spring-boot"
+
+pipeline {
+    agent { label "maven" }
     stages {
-        stage('Build') {
-             docker.image('maven').inside {
-                withMaven {
-                    sh 'mvn -version'
-                }
-        }
-        }
-        stage('Test') {
+        stage("Checkout") {
             steps {
-                echo 'Testing..'
+                checkout scm
             }
         }
-        stage('Deploy') {
+        stage("Docker Build") {
             steps {
-                echo 'Deploying....'
+                // This uploads your application's source code and performs a binary build in OpenShift
+                // This is a step defined in the shared library (see the top for the URL)
+                // (Or you could invoke this step using 'oc' commands!)
+                binaryBuild(buildConfigName: appName, buildFromPath: ".")
             }
         }
+
     }
 }
