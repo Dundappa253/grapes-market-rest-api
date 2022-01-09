@@ -1,11 +1,7 @@
 
-library identifier: "pipeline-library@v1.5",
-retriever: modernSCM(
-  [
-    $class: "GitSCMSource",
-    remote: "https://github.com/Dundappa253/grapes-market-rest-api.git"
-  ]
-)
+library identifier: "pipeline-library@master", retriever: modernSCM(
+  [$class: "GitSCMSource",
+   remote: "https://github.com/Dundappa253/grapes-market-rest-api.git"])
 
 appName = "my-java-spring-boot"
 
