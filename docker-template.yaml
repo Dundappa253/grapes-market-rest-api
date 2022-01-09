@@ -17,7 +17,6 @@ objects:
     labels:
       app: ${APP_NAME}
   spec:
-    nodeSelector: null
     output:
       to:
         kind: ImageStreamTag
