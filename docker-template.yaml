@@ -132,7 +132,7 @@ parameters:
 - name: APP_NAME
   description: Application Name
   required: true
-  value: GrapesApplication
+  value: grapes-application
 - name: PROJECT_NAME
   description: Project Name
   required: true
